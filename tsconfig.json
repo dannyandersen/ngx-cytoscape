@@ -1,20 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
+    "baseUrl": "./src",
     "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": false,
-    "declaration": true,
-    "outDir": "dist"
-  },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "typings/main",
-    "typings/main.d.ts"
-  ]
+    "moduleResolution": "node",
+    "rootDir": "./src",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "types": []
+  }
 }

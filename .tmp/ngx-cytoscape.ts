@@ -3,7 +3,7 @@ declare var jQuery: any;
 declare var cytoscape: any;
 
 @Component({
-    selector: 'ng2-cytoscape',
+    selector: 'ngx-cytoscape',
     template: '<div id="cy"></div>',
     styles: [`#cy {
         height: 100%;
@@ -13,7 +13,7 @@ declare var cytoscape: any;
         top: 0;
     }`]
 })
-export class NgCytoscapeComponent implements OnChanges {
+export class CytoscapeComponent implements OnChanges {
 
     @Input() public elements: any;
     @Input() public style: any;
