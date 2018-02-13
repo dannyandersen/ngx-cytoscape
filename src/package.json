@@ -6,16 +6,12 @@
     "url": "https://github.com/calvinvette/ngx-cytoscape"
   },
   "keywords": [
-    "angular",
-    "cytoscape"
+    "angular"
   ],
   "author": {
     "name": "Calvin Vette",
     "email": "calvinvette@gmail.com"
   },
-  "keywords": [
-    "angular"
-  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/calvinvette/ngx-cytoscape/issues"
@@ -31,6 +27,6 @@
     "jquery": "^3.3.1"
   },
   "dependencies": {
-    "cytoscape": "^3.2.8"
+    "cytoscape": "^2.7.24"
   }
 }

@@ -14,15 +14,15 @@ https://github.com/michaelknoch/ng2-cytoscape
 
 ## Installation
 
-To install this library, run:
+For the moment, to install this library, run:
 
 ```bash
-$ npm install ngx-cytoscape --save
+$ npm install git://github.com/calvinvette/ngx-cytoscape#master 
 ```
 
 ## Consuming your library
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
+Once the library is published to npm, you can import it in any Angular application by running:
 
 ```bash
 $ npm install ngx-cytoscape
@@ -37,7 +37,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'ngx-cytoscape';
+import { CytoscapeModule } from 'ngx-cytoscape';
+import { CytoscapeModule } from "ngx-cytoscape/dist";
 
 @NgModule({
   declarations: [
@@ -45,76 +46,26 @@ import { SampleModule } from 'ngx-cytoscape';
   ],
   imports: [
     BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
+    CytoscapeModule // <= Add this
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-```
-
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
-
-```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
-```
-
-## Development
-
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
 ```
 
 
 ## Example Usage
 
-### In your `app.module.ts`
-Add the import clause to import the module `NgCytoscapeModule`
-
-```typescript
-import {NgCytoscapeModule} from "ng2-cytoscape/dist";
-```
-
-Add the `NgCytoscapeModule` to the imports array of the `NgModule`.
-
-```typescript
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    NgCytoscapeModule // <= Add this
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
-
-### In the component you want to use NgCytoscape
+### In the component you want to use Cytoscape
 ```typescript
 import {Component} from '@angular/core';
 
 @Component({
     selector: 'graph',
-    template: '<ng2-cytoscape [elements]="graphData"></ng2-cytoscape>',
+    template: '<ngx-cytoscape [elements]="graphData"></ngx-cytoscape>',
     styles: [`
-      ng2-cytoscape {
+      ngx-cytoscape {
         height: 100vh;
         float: left;
         width: 100%;
@@ -152,6 +103,25 @@ export class Graph {
 }
 
 ```
+
+
+## Development
+
+To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+
+```bash
+$ npm run build
+```
+
+To lint all `*.ts` files:
+
+```bash
+$ npm run lint
+```
+
+
+
+
 
 
 
