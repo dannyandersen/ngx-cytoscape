@@ -8,6 +8,7 @@ supplied by instance variables.
 This fork adds support for the Angular 5 library formats using RollupJS, supporting UMD and CommonJS formats.
 
 http://js.cytoscape.org
+
 https://github.com/michaelknoch/ng2-cytoscape
 
 
@@ -156,4 +157,4 @@ export class Graph {
 
 ## License
 
-MIT © [Calvin Vette](mailto:calvinvette@gmail.com)
+MIT ©2018 [Calvin Vette]
