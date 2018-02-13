@@ -1,8 +1,8 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CytoscapeComponent} from './ngx-cytoscape';
+import {CytoscapeComponent} from './cytoscape';
 
-export * from './ngx-cytoscape';
+export * from './cytoscape';
 
 @NgModule({
     imports: [

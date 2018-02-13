@@ -34,6 +34,10 @@ dist/*
 # Playground tmp files
 .playground
 
+# Temp dirs shouldn't go to Git
+.tmp
+build
+
 # VI backup and swap files
 *~
 .*~
