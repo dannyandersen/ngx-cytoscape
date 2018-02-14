@@ -24,9 +24,10 @@
     "@angular/core": "^5.0.0",
     "rxjs": "^5.5.0",
     "zone.js": "^0.8.20",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "cytoscape": "^3.2.8"
   },
   "dependencies": {
-    "cytoscape": "^2.7.24"
+    "cytoscape": "^3.2.8"
   }
 }

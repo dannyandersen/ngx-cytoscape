@@ -78,7 +78,15 @@ export class CytoscapeComponent implements OnChanges {
     }
 
     public render() {
-        jQuery(this.el.nativeElement).cytoscape({
+        // jQuery(this.el.nativeElement).cytoscape({
+        //     layout: this.layout,
+        //     minZoom: this.zoom.min,
+        //     maxZoom: this.zoom.max,
+        //     style: this.style,
+        //     elements: this.elements,
+        // });
+        let cy = cytoscape({
+            container: this.el.nativeElement,
             layout: this.layout,
             minZoom: this.zoom.min,
             maxZoom: this.zoom.max,
