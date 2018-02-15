@@ -79,7 +79,7 @@ export class CytoscapeComponent implements OnChanges {
     }
 
     public render() {
-        if (!this.cy) {
+        // if (!this.cy) {
             this.cy = cytoscape({
                 container: this.el.nativeElement,
                 layout: this.layout,
@@ -88,14 +88,14 @@ export class CytoscapeComponent implements OnChanges {
                 style: this.style,
                 elements: this.elements,
             });
-        } else {
-            this.cy.layout = this.layout;
-            this.cy.removeAll();
-            this.cy.add(this.elements);
-            this.cy.minZoom(this.zoom.min);
-            this.cy.maxZoom(this.zoom.max);
-
-        }
+        // } else {
+        //     this.cy.layout = this.layout;
+        //     this.cy.removeAll();
+        //     this.cy.add(this.elements);
+        //     this.cy.minZoom(this.zoom.min);
+        //     this.cy.maxZoom(this.zoom.max);
+        //
+        // }
     }
 
 
