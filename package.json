@@ -1,6 +1,6 @@
 {
   "name": "ngx-cytoscape",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
