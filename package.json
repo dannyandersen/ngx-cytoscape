@@ -1,6 +1,6 @@
 {
   "name": "ngx-cytoscape",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -31,6 +31,7 @@
     "url": "https://github.com/calvinvette/ngx-cytoscape/issues"
   },
   "dependencies": {
+    "@types/cytoscape": "^3.1.6",
     "cytoscape": "^3.2.8",
     "jquery": "^3.3.1"
   },
