@@ -3,8 +3,11 @@ PROJECT_DIR=`pwd`
 
 commit:
 	git add . ; git commit -m "${DATE}"
-	
-patch-versions: commit
+
+push:
+	git push -u origin master
+
+patch-versions: commit push
 	cd ${PROJECT_DIR}/src 
 	npm version patch 
 	cd ${PROJECT_DIR} 
