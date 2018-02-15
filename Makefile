@@ -2,7 +2,8 @@ DATE=$(shell date +%Y%m%d@%H.%M%Z)
 PROJECT_DIR=$(shell pwd)
 
 commit:
-	git add . ; git commit -m "${DATE}"
+	git add .
+	git commit -m "${DATE}"
 
 push:
 	git push -u origin master

@@ -1,6 +1,6 @@
 {
   "name": "ngx-cytoscape",
-  "version": "0.5.12",
+  "version": "0.5.14",
   "repository": {
     "type": "git",
     "url": "https://github.com/calvinvette/ngx-cytoscape"
