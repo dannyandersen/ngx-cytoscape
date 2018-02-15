@@ -22,7 +22,8 @@ build: update-deps
 	npm run build
 
 publish:
-	cd ${PROJECT_DIR}/dist 
-	npm publish
+	echo ${PROJECT_DIR}
+	echo ""${PROJECT_DIR}/dist"
+	(cd ${PROJECT_DIR}/dist && npm publish)
 
 
