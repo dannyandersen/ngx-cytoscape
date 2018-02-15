@@ -15,25 +15,26 @@ declare var cytoscape: any;
 })
 export class CytoscapeComponent implements OnChanges {
 
-    @Input() public elements: any;
-    @Input() public style: any;
-    @Input() public layout: any;
-    @Input() public zoom: any;
+    @Input() private _elements: any;
+    @Input() private _style: any;
+    @Input() private _layout: any;
+    @Input() private _zoom: any;
+    private _cy: any;
 
-    public constructor(private el: ElementRef) {
+    public constructor(private _el: ElementRef) {
 
-        this.layout = this.layout || {
+        this._layout = this._layout || {
             name: 'grid',
             directed: true,
             padding: 0
         };
 
-        this.zoom = this.zoom || {
+        this._zoom = this._zoom || {
             min: 0.1,
             max: 1.5
         };
 
-        this.style = this.style || cytoscape.stylesheet()
+        this._style = this._style || cytoscape.stylesheet()
             .selector('node')
             .css({
                 'content': 'data(name)',
@@ -85,14 +86,66 @@ export class CytoscapeComponent implements OnChanges {
         //     style: this.style,
         //     elements: this.elements,
         // });
-        let cy = cytoscape({
-            container: this.el.nativeElement,
-            layout: this.layout,
-            minZoom: this.zoom.min,
-            maxZoom: this.zoom.max,
-            style: this.style,
-            elements: this.elements,
-        });
+        if (!this.cy) {
+            this.cy = cytoscape({
+                container: this.el.nativeElement,
+                layout: this.layout,
+                minZoom: this.zoom.min,
+                maxZoom: this.zoom.max,
+                style: this.style,
+                elements: this.elements,
+            });
+        } else {
+            this.cy.layout = this.layout;
+        }
     }
 
+
+    get elements(): any {
+        return this._elements;
+    }
+
+    set elements(value: any) {
+        this._elements = value;
+    }
+
+    get style(): any {
+        return this._style;
+    }
+
+    set style(value: any) {
+        this._style = value;
+    }
+
+    get layout(): any {
+        return this._layout;
+    }
+
+    set layout(value: any) {
+        this._layout = value;
+    }
+
+    get zoom(): any {
+        return this._zoom;
+    }
+
+    set zoom(value: any) {
+        this._zoom = value;
+    }
+
+    get cy(): any {
+        return this._cy;
+    }
+
+    set cy(value: any) {
+        this._cy = value;
+    }
+
+    get el(): ElementRef {
+        return this._el;
+    }
+
+    set el(value: ElementRef) {
+        this._el = value;
+    }
 }
