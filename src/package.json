@@ -1,6 +1,6 @@
 {
   "name": "ngx-cytoscape",
-  "version": "0.5.4",
+  "version": "0.5.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/calvinvette/ngx-cytoscape"
@@ -30,5 +30,8 @@
   "dependencies": {
     "@types/cytoscape": "^3.1.6",
     "cytoscape": "^3.2.8"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.0"
   }
 }

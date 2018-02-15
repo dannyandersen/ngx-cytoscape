@@ -15,10 +15,10 @@ declare var cytoscape: any;
 })
 export class CytoscapeComponent implements OnChanges {
 
-    @Input() private _elements: any;
-    @Input() private _style: any;
-    @Input() private _layout: any;
-    @Input() private _zoom: any;
+    private _elements: any;
+    private _style: any;
+    private _layout: any;
+    private _zoom: any;
     private _cy: any;
 
     public constructor(private _el: ElementRef) {
@@ -79,13 +79,6 @@ export class CytoscapeComponent implements OnChanges {
     }
 
     public render() {
-        // jQuery(this.el.nativeElement).cytoscape({
-        //     layout: this.layout,
-        //     minZoom: this.zoom.min,
-        //     maxZoom: this.zoom.max,
-        //     style: this.style,
-        //     elements: this.elements,
-        // });
         if (!this.cy) {
             this.cy = cytoscape({
                 container: this.el.nativeElement,
@@ -97,6 +90,11 @@ export class CytoscapeComponent implements OnChanges {
             });
         } else {
             this.cy.layout = this.layout;
+            this.cy.removeAll();
+            this.cy.add(this.elements);
+            this.cy.minZoom(this.zoom.min);
+            this.cy.maxZoom(this.zoom.max);
+
         }
     }
 
@@ -105,6 +103,7 @@ export class CytoscapeComponent implements OnChanges {
         return this._elements;
     }
 
+    @Input()
     set elements(value: any) {
         this._elements = value;
     }
@@ -113,6 +112,7 @@ export class CytoscapeComponent implements OnChanges {
         return this._style;
     }
 
+    @Input()
     set style(value: any) {
         this._style = value;
     }
@@ -121,6 +121,7 @@ export class CytoscapeComponent implements OnChanges {
         return this._layout;
     }
 
+    @Input()
     set layout(value: any) {
         this._layout = value;
     }
@@ -129,6 +130,7 @@ export class CytoscapeComponent implements OnChanges {
         return this._zoom;
     }
 
+    @Input()
     set zoom(value: any) {
         this._zoom = value;
     }
@@ -137,6 +139,7 @@ export class CytoscapeComponent implements OnChanges {
         return this._cy;
     }
 
+    @Input()
     set cy(value: any) {
         this._cy = value;
     }
@@ -145,6 +148,7 @@ export class CytoscapeComponent implements OnChanges {
         return this._el;
     }
 
+    @Input()
     set el(value: ElementRef) {
         this._el = value;
     }
