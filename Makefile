@@ -26,4 +26,5 @@ publish:
 	echo "${PROJECT_DIR}/dist"
 	(cd ${PROJECT_DIR}/dist && npm publish)
 
-
+# Crank the shaft to the next version
+crank: patch-versions build publish

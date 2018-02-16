@@ -1,6 +1,6 @@
 # ngx-cytoscape
 
-NGX-Cytoscape is an Angular 5+ wrapper around the CytoscapeJS module based on original work from Michael Knoch.
+NGX-Cytoscape is an Angular 5+ wrapper around the CytoscapeJS 3 module based on original work from Michael Knoch.
 
 This library enables you to add Cytoscape-based graph visualizations into your Angular application, with values
 supplied by instance variables.
@@ -22,15 +22,32 @@ CytoscapeJS to your project as well:
 $ npm install --save ngx-cytoscape cytoscape
 ```
 
-If you want to track changes (the project may be mildly fluid, so use extensive Unit/E2E tests if you do),
-specifiy the "latest"
+### Tracking changes
+If you want to track the most recent updates then specifiy the "latest" version
 
 ```bash
 $ npm install --save ngx-cytoscape@latest cytoscape
 ```
 
-Verify in your package.json that you have lines that look like this in your "dependencies" section
-(either "latest" or something like "^0.5.20" for ngx-cytoscape depending on which you chose):
+The project may be mildly fluid, so use extensive Unit/E2E tests if you do and be
+prepared to rollback with "git" or your version control software if tests fail).
+
+The workflow outline of tracking changes might look something like this:
+```bash
+$ git add . ; git commit -m "Pre-update check-in"
+$ ng test   # Store test results for future comparison
+$ npm update ngx-cytoscape cytoscape
+$ ng test   # Now compare these tests results to the previous
+$ git add . ; git commit -m "Passed tests after update" # If the tests looked good
+$ git revert # If the tests were worse off and you don't want to update your code at this point
+```
+
+Of course, CI systems like Jenkins or Travis can automate this for you.
+
+
+Regardless of whether you're tracking changes or locking in a particular version, verify in your package.json that you
+have lines that look like this in your "dependencies" section (either "latest" or something like "^0.5.20" for
+ngx-cytoscape depending on which you chose):
 
 ```json
 "ngx-cytoscape": "latest",

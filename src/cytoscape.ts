@@ -90,7 +90,10 @@ export class CytoscapeComponent implements OnChanges {
             });
         } else {
             this.cy.layout = this.layout;
-            this.cy.removeAll();
+            // this.cy.nodes().forEach(node => {
+            //     node.remove();
+            // });
+            this.cy.nodes().remove();
             this.cy.add(this.elements);
             this.cy.minZoom(this.zoom.min);
             this.cy.maxZoom(this.zoom.max);
