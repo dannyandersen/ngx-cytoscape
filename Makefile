@@ -28,4 +28,6 @@ publish:
 	(cd ${PROJECT_DIR}/dist && npm publish)
 
 # Crank the shaft to the next version
+# Use 'make crank' by itself to use a commit-comment of the current DateTime
+# Use 'make crank COMMENT="..."' to add a more descriptive comment
 crank: patch-versions build publish
