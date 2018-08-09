@@ -38,7 +38,7 @@ export class CytoscapeComponent implements OnChanges {
             .selector('node')
             .css({
                 'content': 'data(name)',
-                'shape': 'rectangle',
+                'shape': 'data(faveShape)',
                 'text-valign': 'center',
                 'background-color': 'data(faveColor)',
                 'width': '200px',
