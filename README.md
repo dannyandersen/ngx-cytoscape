@@ -155,6 +155,17 @@ Future work will include more support for 3rd party Cytoscape plugins. Currently
 have to get access to the module's exposed "cy" object:
 
 ```typescript
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+// ...
+
+export class MyComponent implements OnInit, ngAfterViewInit {
+
+  // Get reference to the native element cytoscape instance 
+  @ViewChild('cytoscape') cytoscape: any;
+
+  // ...
+
   ngAfterViewInit() {
       if (this.cytograph.cy) {
         const cyLayer = this.cytograph.cy.cyCanvas();
