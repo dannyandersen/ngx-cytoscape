@@ -1,4 +1,6 @@
 # ngx-cytoscape
+nmb-NGX-Cytoscape is some simple bugfixes applied to NGX-Cytoscape.  See PR 
+https://github.com/calvinvette/ngx-cytoscape/pull/1 
 
 NGX-Cytoscape is an Angular 5+ wrapper around the CytoscapeJS 3 module based on original work from Michael Knoch.
 
